@@ -10,7 +10,7 @@ public class Increment {
       JavaSparkContext jsc = new JavaSparkContext(spark.sparkContext());
 
       
-      JavaRDD<String> dataRdd = jsc.textFile("/home/student/dataset/ones.txt",2);
+      JavaRDD<String> dataRdd = jsc.textFile("/home/student/css333/dataset/ones.txt",2);
 
       JavaRDD<Integer> newRdd = dataRdd.map( str -> 
             Integer.parseInt(str) + 1
@@ -20,7 +20,7 @@ public class Increment {
       System.out.println("Summation of all numbers = " + sum);
    
       System.out.println("Save newRdd to file");
-      newRdd.saveAsTextFile("/home/student/output");
+      newRdd.saveAsTextFile("/home/student/css333/example/newRDD");
 
       spark.stop();
    }

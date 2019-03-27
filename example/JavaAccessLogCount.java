@@ -19,7 +19,7 @@ public final class JavaAccessLogCount {
           .getOrCreate();
     JavaSparkContext jsc = new JavaSparkContext(spark.sparkContext());
 
-    JavaRDD<String> lines = jsc.textFile("/home/student/dataset/accesslog.csv",4);
+    JavaRDD<String> lines = jsc.textFile("/home/student/css333/dataset/accesslog.csv",4);
 
     JavaPairRDD<String, Integer> ips = lines.mapToPair( str -> {
        String[] cols = str.split(",");
